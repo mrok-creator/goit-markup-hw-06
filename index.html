@@ -351,10 +351,16 @@
       <!-- модальне вікно -->
       <div class="backdrop is-hidden" data-modal>
         <div class="modal">
+          <button type="button" class="modal-btn" data-modal-close>
+            <svg class="modal-icon" height="18" width="18">
+              <use href="./images/icons.svg#icon-close"></use>
+            </svg>
+          </button>
           <div class="modal-form-box">
             <p class="modal-form-title">
               Оставьте свои данные, мы вам перезвоним
             </p>
+
             <form class="modal-form">
               <div class="form-field">
                 <label for="user-name" class="modal-form-labl">Имя</label>
@@ -386,37 +392,34 @@
                 />
               </div>
 
-              <div class="form-field-comments">
-                <label class="modal-lable-comments" for="comment"
+              <div class="form-field-comment">
+                <label class="form-lable-comments" for="comment"
                   >Комментарий</label
                 >
                 <textarea
                   name="comments"
                   id="comment"
                   rows="5"
-                  cols="60"
                   placeholder="Введите текст"
                 ></textarea>
               </div>
 
-              <div class="policy-box">
-                <label class="">
-                  <input type="checkbox" name="policy" value="agree" />
+              <div class="form-field policy">
+                <input
+                  type="checkbox"
+                  name="policy"
+                  id="policy"
+                  value="agree"
+                />
+                <label for="policy">
                   Соглашаюсь с рассылкой и принимаю
-                  <a href="#">Условия договора</a>
+                  <a href="">Условия договора</a>
                 </label>
               </div>
-              <button type="submit" class="btn-primary form-btn">
-                Отправить
-              </button>
+
+              <button type="submit" class="form-btn">Отправить</button>
             </form>
           </div>
-
-          <button type="button" class="modal-btn" data-modal-close>
-            <svg class="modal-icon" height="18" width="18">
-              <use href="./images/icons.svg#icon-close"></use>
-            </svg>
-          </button>
         </div>
       </div>
     </main>
