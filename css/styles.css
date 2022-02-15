@@ -57,8 +57,7 @@ ol {
   color: inherit;
   text-decoration: none;
 
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link:hover,
@@ -70,12 +69,14 @@ ol {
   color: var(--accent-color);
   text-decoration: none;
 
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .current-link::after {
   content: "";
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   position: absolute;
   bottom: 0;
   left: 0;
@@ -116,8 +117,7 @@ ol {
   background-color: var(--accent-color);
   color: var(--primary-white-color);
 
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-secondary {
@@ -125,6 +125,7 @@ ol {
 
   background-color: var(--secondary-white-color);
   color: var(--text-secondary-color);
+  transition: color, background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-primary:hover,
@@ -173,8 +174,7 @@ body {
   color: var(--icon-pr-color);
   text-decoration: none;
 
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color, background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-icon {
@@ -219,8 +219,7 @@ body {
   font-size: 26px;
   line-height: 1.19;
 
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color, background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo-primary {
@@ -234,8 +233,8 @@ body {
   color: var(--primary-white-color);
 }
 
-.logo:hover,
-.logo:focus {
+.logo span:hover,
+.logo span:focus {
   color: var(--accent-color);
 }
 
@@ -291,8 +290,7 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
 
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-header {
@@ -531,8 +529,7 @@ body {
   color: var(--icon-pr-color);
   text-decoration: none;
 
-  transition-duration: 350ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color, background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-icon {
@@ -585,8 +582,7 @@ body {
   color: var(--icon-pr-color);
   text-decoration: none;
 
-  transition-duration: 350ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color, border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .partner-icon {
@@ -637,10 +633,11 @@ body {
   margin-right: 30px;
   margin-bottom: 30px;
 
+  border: none;
+
   background-color: var(--primary-white-color);
 
-  transition-duration: 350ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .gallery-card:hover,
@@ -671,11 +668,14 @@ body {
 
 .flow-description {
   position: absolute;
-  top: 100%;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   padding: 63px 24px;
+
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   overflow: hidden;
   margin: 0;
@@ -686,6 +686,7 @@ body {
   letter-spacing: 0.03em;
   color: var(--primary-white-color);
 
+  transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -856,6 +857,7 @@ body {
   outline: none;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .input-subscribe:focus {
@@ -868,6 +870,8 @@ body {
   width: 200px;
   transform: translateY(35px);
   padding-right: 47px;
+
+  cursor: pointer;
   color: var(--primary-white-color);
   background-color: var(--accent-color);
 
@@ -875,9 +879,6 @@ body {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
-
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .send-btn::after {
@@ -949,11 +950,12 @@ body {
   justify-content: center;
   align-items: center;
 
+  cursor: pointer;
+  fill: var(--text-secondary-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
 
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-btn:hover .modal-icon {
@@ -963,8 +965,6 @@ body {
 .modal-icon {
   fill: #000;
 }
-
-/* example */
 
 .modal-form-title {
   margin-top: 0;
@@ -1077,6 +1077,7 @@ body {
   width: 200px;
   height: 50px;
 
+  cursor: pointer;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
 
